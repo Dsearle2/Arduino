@@ -2628,139 +2628,6 @@ MonoBehaviour:
     radialOrigin: {x: 0.000000059604645, y: 0, z: 0}
     radialRadius: 1
   useFill: 1
---- !u!1 &353594912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353594913}
-  - component: {fileID: 353594916}
-  - component: {fileID: 353594915}
-  - component: {fileID: 353594914}
-  m_Layer: 3
-  m_Name: Disc (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &353594913
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353594912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1621596968}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &353594914
-MeshRenderer:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353594912}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f1152319638614c47882e3b5d0aedbb8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -150274861
-  m_SortingLayer: 1
-  m_SortingOrder: -1
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &353594915
-MeshFilter:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353594912}
-  m_Mesh: {fileID: 43100795730674332, guid: a3d1f56cebf202c448b6fb479f61a9dc, type: 2}
---- !u!114 &353594916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353594912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dd51d29965c9d04599a2fdc8a833c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blendMode: 0
-  scaleMode: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
-  detailLevel: 2
-  renderQueue: -1
-  zTest: 4
-  zOffsetFactor: 0
-  zOffsetUnits: 0
-  stencilComp: 8
-  stencilOpPass: 0
-  stencilRefID: 0
-  stencilReadMask: 255
-  stencilWriteMask: 255
-  type: 2
-  colorMode: 0
-  colorOuterStart: {r: 1, g: 1, b: 1, a: 1}
-  colorInnerEnd: {r: 1, g: 1, b: 1, a: 1}
-  colorOuterEnd: {r: 1, g: 1, b: 1, a: 1}
-  geometry: 0
-  angUnitInput: 1
-  angRadiansStart: 0
-  angRadiansEnd: 2.3561945
-  radius: 3.7
-  radiusSpace: 0
-  thickness: 0.7
-  thicknessSpace: 1
-  arcEndCaps: 0
-  matchDashSpacingToSize: 1
-  dashed: 1
-  dashStyle:
-    type: 0
-    space: -2
-    snap: 1
-    size: 20
-    spacing: 0.1189485
-    offset: 0
-    shapeModifier: 1
 --- !u!1 &361032581
 GameObject:
   m_ObjectHideFlags: 0
@@ -9618,7 +9485,7 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 4.0142574
   angRadiansEnd: 5.4105206
-  radius: 3.5
+  radius: 3.4
   radiusSpace: 0
   thickness: 0.1
   thicknessSpace: 0
@@ -9766,9 +9633,9 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 4.0142574
   angRadiansEnd: 5.4105206
-  radius: 2.85
+  radius: 3
   radiusSpace: 0
-  thickness: 1
+  thickness: 0.5
   thicknessSpace: 0
   arcEndCaps: 0
   matchDashSpacingToSize: 1
@@ -11357,7 +11224,7 @@ Transform:
   - {fileID: 195842075}
   - {fileID: 1563547001}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857248035
 GameObject:
@@ -12416,9 +12283,9 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 0.87266463
   angRadiansEnd: 2.268928
-  radius: 2.85
+  radius: 3
   radiusSpace: 0
-  thickness: 1
+  thickness: 0.5
   thicknessSpace: 0
   arcEndCaps: 0
   matchDashSpacingToSize: 1
@@ -13595,9 +13462,9 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: -0.6981317
   angRadiansEnd: 0.6981317
-  radius: 1.734
+  radius: 3
   radiusSpace: 0
-  thickness: 0.628
+  thickness: 0.5
   thicknessSpace: 0
   arcEndCaps: 0
   matchDashSpacingToSize: 1
@@ -13674,16 +13541,16 @@ MonoBehaviour:
   shields:
   - shieldUI: {fileID: 1194177227}
     arc: {x: -45, y: 45}
-    distribution: 0.628
+    distribution: 0.5
   - shieldUI: {fileID: 1484486308}
     arc: {x: 45, y: 135}
-    distribution: 1
+    distribution: 0.5
   - shieldUI: {fileID: 1340921867}
     arc: {x: 135, y: 225}
-    distribution: 1
+    distribution: 0.5
   - shieldUI: {fileID: 553206539}
     arc: {x: 225, y: 315}
-    distribution: 1
+    distribution: 0.5
   recoveryRate: 1
   maxHealth: 10
   selector: 0
@@ -14356,9 +14223,9 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 2.443461
   angRadiansEnd: 3.8397243
-  radius: 2.85
+  radius: 3
   radiusSpace: 0
-  thickness: 1
+  thickness: 0.5
   thicknessSpace: 0
   arcEndCaps: 0
   matchDashSpacingToSize: 1
@@ -15445,7 +15312,7 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: -0.6981317
   angRadiansEnd: 0.6981317
-  radius: 2.198
+  radius: 3.4
   radiusSpace: 0
   thickness: 0.1
   thicknessSpace: 0
@@ -16410,7 +16277,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1282387698
 MonoBehaviour:
@@ -16801,7 +16668,7 @@ Transform:
   - {fileID: 1546031584}
   - {fileID: 1584240870}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340921862
 GameObject:
@@ -16923,7 +16790,7 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 2.443461
   angRadiansEnd: 3.8397243
-  radius: 3.5
+  radius: 3.4
   radiusSpace: 0
   thickness: 0.1
   thicknessSpace: 0
@@ -17940,7 +17807,7 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 0.87266463
   angRadiansEnd: 2.268928
-  radius: 3.5
+  radius: 3.4
   radiusSpace: 0
   thickness: 0.1
   thicknessSpace: 0
@@ -19717,7 +19584,6 @@ Transform:
   - {fileID: 406358657}
   - {fileID: 1672018925}
   - {fileID: 96173353}
-  - {fileID: 353594913}
   m_Father: {fileID: 1566396953}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
