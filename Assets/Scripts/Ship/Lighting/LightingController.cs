@@ -13,7 +13,7 @@ public class LightingController : MonoBehaviour {
     public int Setting {
         get { return setting; }
         set {
-            setting = Mathf.Clamp(value, 0, lightStates.Length - 1);
+            setting = (value + lightStates.Length) % lightStates.Length;
             foreach (VehicleLight light in lights) {
                 light.Intensity = lightStates[setting].intensity;
                 light.Arc = lightStates[setting].arc;

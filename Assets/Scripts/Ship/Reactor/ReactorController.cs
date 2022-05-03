@@ -34,9 +34,7 @@ public class ReactorController : MonoBehaviour {
         }
     }
     public float FanSpeedDelta {
-        set {
-            fanSpeed += value;
-        }
+        set { FanSpeed += value; }
     }
 
 

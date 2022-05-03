@@ -95,13 +95,13 @@ public class VehicleController : MonoBehaviour {
         switch (engineMode) {
             case EngineMode.Fuel:
                 rigidbody.mass = baseMass * massGenerator.value;
-                rigidbody.AddForce((SerialManager.JoyValues * fuelThrust.value) - Physics2D.gravity);
+                //rigidbody.AddForce((SerialManager.JoyValues * fuelThrust.value) - Physics2D.gravity);
                 rigidbody.AddForce((UnityEngine.Random.insideUnitCircle * UnityEngine.Random.Range(engineVibration.x, engineVibration.y) * Time.fixedDeltaTime) / stabilizer.value, ForceMode2D.Impulse);
                 return;
             case EngineMode.Electric:
                 rigidbody.drag = baseDrag * decelerator.value;
                 rigidbody.gravityScale = 1f - antiGravity.value;
-                rigidbody.AddForce(SerialManager.JoyValues * electricThrust.value);
+                //rigidbody.AddForce(SerialManager.JoyValues * electricThrust.value);
                 return;
             default:
                 return;

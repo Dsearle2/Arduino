@@ -9,31 +9,39 @@ public class RadarController : MonoBehaviour {
     [SerializeField] private RadarUI radarUI;
 
     [SerializeField, HideInInspector] private float angle;
-    [PropertyRange(0f, 360f), ShowInInspector] public float Angle {
+    [PropertyRange(0f, 360f), ShowInInspector] 
+    public float Angle {
         get { return angle; }
         set {
-            angle = value;
+            angle = (value + 360f) % 360f;
             radarUI?.SetIndicatorAngle(angle);
         }
     }
+    public float AngleDelta {
+        set { Angle += value; }
+    }
 
-    [SerializeField, HideInInspector] private float angleRange;
-    [PropertyRange("@angleRanges.x", "@angleRanges.y"), ShowInInspector] public float AngleRange {
-        get { return Mathf.Lerp(angleRanges.x, angleRanges.y, angleRange); }
+    [SerializeField, HideInInspector] private float arc;
+    [PropertyRange(0f, 1f), ShowInInspector]
+    public float Arc {
+        get { return arc; }
         set {
-            angleRange = Mathf.InverseLerp(angleRanges.x, angleRanges.y, value);
-            radarUI?.SetIndicatorRange(DetectionRadius / rangeMax, value);
+            arc = Mathf.Clamp01(value);
+            radarUI?.SetIndicatorRange(DetectionRadius / rangeMax, Mathf.Lerp(arcRange.x, arcRange.y, arc));
         }
+    }
+    public float ArcDelta {
+        set { Arc += value; }
     }
 
     [SerializeField] private float rangeMax = 300f, rangeMin;
-    [SerializeField, MinMaxSlider(0f, 360f, ShowFields = true)] private Vector2 angleRanges;
+    [SerializeField, MinMaxSlider(0f, 360f, ShowFields = true)] private Vector2 arcRange;
     [SerializeField] private float fadeRange = 50f;
     [SerializeField] private float rangeSpeed = 300f;
     
     [SerializeField] private ContactFilter2D radarLayerMask;
 
-    private float DetectionRadius => Mathf.Lerp(rangeMin, rangeMax, 1 - angleRange);
+    private float DetectionRadius => Mathf.Lerp(rangeMin, rangeMax, 1 - Arc);
 
     private float range;
     private float curAngle, curAngleRange, curDetectionRadius;
@@ -51,7 +59,7 @@ public class RadarController : MonoBehaviour {
         if (range > 1.0f) {
             range = 0.1f;
             curAngle = transform.rotation.eulerAngles.z + angle;
-            curAngleRange = AngleRange;
+            curAngleRange = Mathf.Lerp(arcRange.x, arcRange.y, Arc);
             curDetectionRadius = DetectionRadius;
             pingedColliders.Clear();
 

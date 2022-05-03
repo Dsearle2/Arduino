@@ -25,7 +25,9 @@ public class ShieldController : MonoBehaviour {
     [PropertyRange(0, "@shields.Length - 1"), ShowInInspector]
     public int Selector {
         get { return selector; }
-        set { selector = value % shields.Length; }
+        set {
+            selector = (value + shields.Length) % shields.Length;
+        }
     }
     public int SelectorDelta {
         set { Selector += value; }
@@ -42,8 +44,11 @@ public class ShieldController : MonoBehaviour {
                 while (charge > Mathf.Epsilon && fullShieldCount < shields.Length - 1) {
                     float perShieldCharge = charge / (shields.Length - 1 - fullShieldCount);
                     for (int i = 0; i < shields.Length; i++) {
-                        if (i == selector || Mathf.Approximately(shields[i].Health, shields[i].Distribution)) continue;
-                        
+                        if (i == selector || Mathf.Approximately(shields[i].Health, shields[i].Distribution)) {
+                            fullShieldCount++;
+                            continue;
+                        }
+                            
                         float deltaCharge = Mathf.Min(shields[i].Distribution - shields[i].Health, perShieldCharge);
                         shields[i].Health += deltaCharge;
                         charge -= deltaCharge;
