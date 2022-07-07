@@ -77,6 +77,7 @@ public class ShieldController : MonoBehaviour {
     public class Shield {
 
         [SerializeField] private ShieldUI shieldUI;
+        [SerializeField] private PointEffector2D effector;
 
         [SerializeField, HideInInspector] private Vector2 arc;
         [MinMaxSlider(-360f, 360f, ShowFields = true), ShowInInspector]  public Vector2 Arc {
@@ -103,6 +104,7 @@ public class ShieldController : MonoBehaviour {
             set {
                 health = Mathf.Clamp(value, 0f, distribution);
                 //disc.Radius = health / valA * (3f + 0.25f - valA / 2f);
+                effector.forceMagnitude = health * 2f;
                 shieldUI?.SetIndicator(health, Distribution);
             }
         }

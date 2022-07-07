@@ -10,13 +10,13 @@ public class ButtonInput : ArduinoInput {
         set {
             prevRaw = raw;
             raw = value;
-            if (prevRaw != raw) OnChangedInvoke();
+            if (Delta) OnChangedInvoke();
         }
     }
 
     [ShowInInspector]
     public bool Value {
-        get { return Raw == 1; }
+        get { return Raw > 0; }
     }
 
     [ShowInInspector]

@@ -35,7 +35,7 @@ public class ScannerTarget : MonoBehaviour {
             float rng = UnityEngine.Random.Range(0f, 1f);
             int resourceIndex = -1, index = 0;
             foreach (float rate in Rates) {
-                if (rng < rate) {
+                if (rng <= rate) {
                     resourceIndex = index;
                     break;
                 } else rng -= rate;

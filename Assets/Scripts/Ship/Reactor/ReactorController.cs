@@ -77,4 +77,11 @@ public class ReactorController : MonoBehaviour {
         Fuel -= fuelBurnBase * (inletFuelCurve.Evaluate(inletRatio) / fanEfficiencyCurve.Evaluate(FanSpeed)) * Time.deltaTime;
     }
 
+    private void Awake() {
+        InvokeRepeating("SendValues", 1, 0.1f);
+    }
+    private void SendValues() {
+        SerialManager.SetLEDValues((byte)(heat * 255), (byte)(fuel * 255), (byte)(power * 255));
+    }
+
 }

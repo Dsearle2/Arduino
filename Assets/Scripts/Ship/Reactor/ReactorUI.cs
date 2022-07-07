@@ -18,9 +18,8 @@ public class ReactorUI : MonoBehaviour {
     [SerializeField] private Rectangle heatIndicator, powerIndicator, fuelIndicator;
 
 
-    private void Awake() {
+    private void OnEnable() {
         StartCoroutine(RotateFan());
-
         IEnumerator RotateFan() {
             while (enabled) {
                 fanTransform.Rotate(Vector3.forward, angleStep);

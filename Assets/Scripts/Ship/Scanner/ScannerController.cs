@@ -8,7 +8,8 @@ public class ScannerController : MonoBehaviour {
 
     [SerializeField] private ScannerUI scannerUI;
 
-    private ScannerTarget target;
+    [SerializeField] private float scannerRange = 8;
+    [ShowInInspector] private ScannerTarget target;
 
     [Button] private void Test() {
         target.Start();
@@ -38,6 +39,13 @@ public class ScannerController : MonoBehaviour {
     }
     public float AmplitudeDelta {
         set { Amplitude += value; }
+    }
+
+    private void Update() {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, scannerRange);
+        if (hit && hit.rigidbody.TryGetComponent(out target)) {
+            scannerUI.UpdateTarget(target);
+        }
     }
 
 }

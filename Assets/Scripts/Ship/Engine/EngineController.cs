@@ -98,4 +98,27 @@ public class EngineController : MonoBehaviour {
     //    Gizmos.DrawLine(posC, posA);
     //}
 
+
+    [SerializeField] private Rigidbody2D shipRigidbody;
+
+    [SerializeField] private float maxThrust, maxTorque;
+
+    private void FixedUpdate() {
+        shipRigidbody.drag = Stab;
+
+        Vector2 moveDir = Vector2.zero;
+        if (UnityEngine.Input.GetKey(KeyCode.W)) moveDir += (Vector2)transform.parent.up;
+        if (UnityEngine.Input.GetKey(KeyCode.S)) moveDir -= (Vector2)transform.parent.up;
+        if (UnityEngine.Input.GetKey(KeyCode.E)) moveDir += (Vector2)transform.parent.right;
+        if (UnityEngine.Input.GetKey(KeyCode.Q)) moveDir -= (Vector2)transform.parent.right;
+        shipRigidbody.AddForce(moveDir.normalized * maxThrust * Thrust);
+
+        if (UnityEngine.Input.GetKey(KeyCode.D)) {
+            shipRigidbody.AddTorque(-maxTorque * Turn);
+        }
+        if (UnityEngine.Input.GetKey(KeyCode.A)) {
+            shipRigidbody.AddTorque(maxTorque * Turn);
+        }
+    }
+
 }

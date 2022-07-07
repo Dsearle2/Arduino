@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class JoystickInput : ArduinoInput {
@@ -51,7 +52,8 @@ public class JoystickInput : ArduinoInput {
     }
 
     public override void Parse(ref int index, string[] inputs) {
-        if (float.TryParse(inputs[index++], out float joyX) && float.TryParse(inputs[index++], out float joyY)) {
+        if (float.TryParse(inputs[index++], NumberStyles.Float, CultureInfo.InvariantCulture,  out float joyX) &&
+            float.TryParse(inputs[index++], NumberStyles.Float, CultureInfo.InvariantCulture, out float joyY)) {
             Raw = new Vector2(joyX, joyY);
         }
     }

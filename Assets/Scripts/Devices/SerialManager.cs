@@ -31,9 +31,12 @@ public class SerialManager : SerializedMonoBehaviour {
         if (!UduinoManager.Instance.isConnected() && UduinoManager.Instance.ManagerState != UduinoManagerState.Discovering) UduinoManager.Instance.DiscoverPorts();
     }
     
-    [Button]
-    public void SetLEDValue(int ledIndex, byte value) {
+    [Button] public static void SetLEDValue(int ledIndex, byte value) {
         UduinoManager.Instance.sendCommand("SetLED", ledIndex, value);
+    }
+    [Button]
+    public static void SetLEDValues(byte r, byte g, byte b) {
+        UduinoManager.Instance.sendCommand("SetLEDs", r, g, b);
     }
 
     private void HandleData(string data, UduinoDevice board) {
