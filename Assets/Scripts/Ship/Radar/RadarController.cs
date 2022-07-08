@@ -58,7 +58,7 @@ public class RadarController : MonoBehaviour {
         range += rangeSpeed * Time.deltaTime;
         if (range > 1.0f) {
             range = 0.1f;
-            curAngle = transform.rotation.eulerAngles.z + angle;
+            curAngle = -transform.rotation.eulerAngles.z + angle;
             curAngleRange = Mathf.Lerp(arcRange.x, arcRange.y, Arc);
             curDetectionRadius = DetectionRadius;
             pingedColliders.Clear();

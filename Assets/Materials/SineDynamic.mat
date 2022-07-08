@@ -39,5 +39,5 @@ Material:
     - _Float: 0
     - _Speed: 0.3
     m_Colors:
-    - _Tiling: {r: 3.9679995, g: 1.9364002, b: 0, a: 0}
+    - _Tiling: {r: 3.9679995, g: 1.9363999, b: 0, a: 0}
   m_BuildTextureStacks: []
